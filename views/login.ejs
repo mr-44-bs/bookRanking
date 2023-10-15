@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="content-type"
+        content="text/html; charset=UTF-8">
+<title><%= title %></title>
+<link rel='stylesheet' href='/styleshieets/style.css' />
+</head>
+
+<body>
+    <head>
+        <h1><%= title %></h1>
+    </head>
+    <div role="main">   
+        <table>
+            <tr>
+                <th>NAME</th>
+                <td><input type="text" name="name"
+                    value="<%= form.name %>"></td>
+            </tr>
+            
+            <tr>
+                <th>PASSWORD</th>
+                <td><input type="PASSWORD" name="PASSWORD"
+                value="<%= form.password %>"></td>
+            </tr>
+            <tr>
+            <th></th>
+            <td></td>
+            </tr>
+        </table>
+            <form method="get" action="/hello">
+            <input type="submit" value="ログイン">
+            </form>
+            <p><a href="/add">アカウントの作成&gt;&gt;</a></p>       
+    </div>
+
+</body>
+</html>

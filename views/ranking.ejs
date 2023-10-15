@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=data.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>プログラミング書籍の売上ランキング</h1>
+    <div role ="main">
+      <table>     
+        <tr>
+          <th>ランキング</th>
+          <th>タイトル</th>
+          <th><%= data.author %></th>
+          <th>価格</th>
+          <th>売上冊数</th>
+        </tr>
+        <% for(var i in data.content) { %>
+        <tr>
+          <% var obj = data.content[i]; %>
+          <% var n = parseInt(i)+1; %>
+          <td><%= n %></td>
+          <td><%= obj.title %></td>
+          <td><%= obj.author %></td>
+          <td><%= obj.price + '円' %></td> 
+          <td><%= obj.selling + '冊'%></td>              
+          </tr>
+        <% } %>
+       
+      </table>
+    </div>
+  </body>
+</html>

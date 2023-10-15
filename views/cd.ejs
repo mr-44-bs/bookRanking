@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cd</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>cd情報</h1>
+    <div role ="main">
+      <table>     
+        <tr>
+          <th>タイトル</th>
+          <th>ジャンル</th>
+          <th>アーティスト</th>
+          <th>発売日</th>
+          <th>価格</th>
+        </tr>
+        <% for(var i in data.content) { %>
+        <tr>
+          <% var obj = data.content[i]; %>
+          <td><%= obj.cdTitle %></td>
+          <td><%= obj.genre %></td>
+          <td><%= obj.artistName %></td>
+          <td><%= obj.date%></td>              
+          <td><%= obj.price + '円' %></td> 
+          </tr>
+        <% } %>
+       
+      </table>
+    </div>
+  </body>
+</html>

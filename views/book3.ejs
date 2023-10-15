@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <head>
+    <title><%=data.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="count.js"></script>
+  </head>
+  <body>
+    <h1>書籍一覧</h1>
+    <div role ="main">
+      <table>     
+        <tr>
+          <th class="a">ID</th>
+          <th class="b">タイトル</th>
+          <th class="c"><%= data.publisher %></th>
+          <th class="d">出版予定日</th>
+          <th class="e">いいね！</th>
+          
+        </tr>
+        <% for(var i in data.content) { %>
+        <tr>
+          <% var obj = data.content[i]; %>
+          <% var n = parseInt(i)+1; %>
+          <% var s = addCount[k]; %>
+          <td><%= n %></td>
+          <td><%= obj.title %></td>
+          <td><%= obj.publisher %></td>
+          <td><%= obj.date %></td> 
+          <td><%= s %> &nbsp; 
+           
+            <p id="counter"></p>
+            <p><input type="button" id="btnAdd" value="いいね！" onclick="OnButtonClick()"></p>
+            <!-- <script>
+              function OnButtonClick() {
+                // target = document.getElementById("output");
+                target.innerHTML = k++;
+              }
+            </script> -->
+
+          
+                     
+            <!-- <form method="post" action ="/">
+                <input type="submit" value="いいね！" name="message">
+            </form> -->
+        </td>               
+        </tr>
+        <% } %>
+       
+      </table>
+    </div>
+  </body>
+</html>
